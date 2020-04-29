@@ -1,11 +1,16 @@
-const express = require("express");
-const app = express();
+const express = require("express")
+const app = express()
+const fs = require("fs")
 
 let broadcaster;
-const port = 80;
+const port = 443;
 
-const http = require("http");
-const server = http.createServer(app);
+const https = require("https");
+const server = https.createServer({
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem'),
+  passphrase: 'Xingu3'
+}, app)
 
 const io = require("socket.io")(server);
 app.use(express.static(__dirname + "/public"));
