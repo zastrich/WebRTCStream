@@ -2,9 +2,9 @@
   "name": "webrtcvideobroadcast",
   "version": "1.0.0",
   "description": "WebRTC example for a video broadcast",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server",
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
